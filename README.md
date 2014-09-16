@@ -55,11 +55,11 @@ Select an optimization level between `0` and `4`.
 
 Levels:
 
-0. Don't compress
-1. Compress fast (zlib)
-2. Compress normal (7z)
-3. Compress extra (7z)
-4. Compress extreme (zopfli)
+`0` Don't compress  
+`1` Compress fast (zlib)  
+`2` Compress normal (7z)  
+`3` Compress extra (7z)  
+`4` Compress extreme (zopfli)
 
 
 ## License
