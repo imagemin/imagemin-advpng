@@ -1,0 +1,41 @@
+{
+  "name": "imagemin-advpng",
+  "version": "1.0.0",
+  "description": "advpng imagemin plugin",
+  "license": "MIT",
+  "repository": "imagemin/imagemin-advpng",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "compress",
+    "image",
+    "imageminplugin",
+    "img",
+    "minify",
+    "optimize",
+    "png"
+  ],
+  "dependencies": {
+    "advpng-bin": "^1.0.0",
+    "exec-buffer": "^1.0.1",
+    "is-png": "^1.0.0",
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "vinyl": "^0.4.3",
+    "vinyl-file": "^1.1.0"
+  }
+}
