@@ -19,7 +19,9 @@
     "index.js"
   ],
   "keywords": [
+    "advpng",
     "compress",
+    "gulpplugin",
     "image",
     "imageminplugin",
     "img",
