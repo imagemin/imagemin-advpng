@@ -30,13 +30,13 @@
     "png"
   ],
   "dependencies": {
-    "advpng-bin": "^1.0.0",
+    "advpng-bin": "^2.0.0",
     "exec-buffer": "^1.0.1",
     "is-png": "^1.0.0",
     "through2": "^0.6.1"
   },
   "devDependencies": {
-    "ava": "0.0.4",
+    "ava": "^0.0.4",
     "vinyl": "^0.4.3",
     "vinyl-file": "^1.1.0"
   }
