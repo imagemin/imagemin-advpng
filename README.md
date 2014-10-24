@@ -1,6 +1,5 @@
 # imagemin-advpng [![Build Status](http://img.shields.io/travis/imagemin/imagemin-advpng.svg?style=flat)](https://travis-ci.org/imagemin/imagemin-advpng) [![Build status](https://ci.appveyor.com/api/projects/status/8vw4a6jtvhao3jev)](https://ci.appveyor.com/project/ShinnosukeWatanabe/imagemin-advpng)
 
-
 > advpng imagemin plugin
 
 
@@ -39,7 +38,7 @@ var advpng = require('imagemin-advpng');
 
 gulp.task('default', function () {
 	return gulp.src('images/*.png')
-		.pipe(advpng({ optimizationLevel: 4 }))
+		.pipe(advpng({ optimizationLevel: 4 })())
 		.pipe(gulp.dest('build/images'));
 });
 ```
