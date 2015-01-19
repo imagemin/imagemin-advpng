@@ -48,7 +48,10 @@ module.exports = function (opts) {
 					return;
 				}
 
-				file.contents = buf;
+				if (buf.length < file.contents) {
+					file.contents = buf;
+				}
+				
 				cb(null, file);
 			});
 	});
