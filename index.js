@@ -5,17 +5,10 @@ var ExecBuffer = require('exec-buffer');
 var isPng = require('is-png');
 var through = require('through2');
 
-/**
- * advpng imagemin plugin
- *
- * @param {Object} opts
- * @api public
- */
-
 module.exports = function (opts) {
 	opts = opts || {};
 
-	return through.ctor({ objectMode: true }, function (file, enc, cb) {
+	return through.ctor({objectMode: true}, function (file, enc, cb) {
 		if (file.isNull()) {
 			cb(null, file);
 			return;
@@ -51,7 +44,7 @@ module.exports = function (opts) {
 				if (buf.length < file.contents.length) {
 					file.contents = buf;
 				}
-				
+
 				cb(null, file);
 			});
 	});

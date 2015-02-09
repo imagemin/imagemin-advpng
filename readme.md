@@ -19,7 +19,7 @@ var advpng = require('imagemin-advpng');
 var imagemin = new Imagemin()
 	.src('images/*.png')
 	.dest('build/images')
-	.use(advpng({ optimizationLevel: 4 }));
+	.use(advpng({optimizationLevel: 4}));
 
 imagemin.run(function (err, files) {
 	if (err) {
@@ -38,7 +38,7 @@ var advpng = require('imagemin-advpng');
 
 gulp.task('default', function () {
 	return gulp.src('images/*.png')
-		.pipe(advpng({ optimizationLevel: 4 })())
+		.pipe(advpng({optimizationLevel: 4})())
 		.pipe(gulp.dest('build/images'));
 });
 ```
