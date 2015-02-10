@@ -24,7 +24,7 @@ module.exports = function (opts) {
 			return;
 		}
 
-		var exec = new ExecBuffer();
+		var execBuffer = new ExecBuffer();
 		var args = ['--recompress', '-q'];
 		var optimizationLevel = opts.optimizationLevel || 3;
 
@@ -32,9 +32,9 @@ module.exports = function (opts) {
 			args.push('-' + optimizationLevel);
 		}
 
-		exec
-			.dest(exec.src())
-			.use(advpng, args.concat([exec.src()]))
+		execBuffer
+			.dest(execBuffer.src())
+			.use(advpng, args.concat([execBuffer.src()]))
 			.run(file.contents, function (err, buf) {
 				if (err) {
 					cb(err);
