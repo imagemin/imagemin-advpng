@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save imagemin-advpng
 ```
 
@@ -14,41 +14,36 @@ $ npm install --save imagemin-advpng
 
 ```js
 var Imagemin = require('imagemin');
-var advpng = require('imagemin-advpng');
+var imageminAdvpng = require('imagemin-advpng');
 
-var imagemin = new Imagemin()
+new Imagemin()
 	.src('images/*.png')
 	.dest('build/images')
-	.use(advpng({optimizationLevel: 4}));
-
-imagemin.run(function (err, files) {
-	if (err) {
-		throw err;
-	}
-
-	console.log('Files optimized successfully!'); 
-});
+	.use(imageminAdvpng({optimizationLevel: 4}))
+	.run();
 ```
 
 You can also use this plugin with [gulp](http://gulpjs.com):
 
 ```js
 var gulp = require('gulp');
-var advpng = require('imagemin-advpng');
+var imageminAdvpng = require('imagemin-advpng');
 
 gulp.task('default', function () {
 	return gulp.src('images/*.png')
-		.pipe(advpng({optimizationLevel: 4})())
+		.pipe(imageminAdvpng({optimizationLevel: 4})())
 		.pipe(gulp.dest('build/images'));
 });
 ```
 
 
-## Options
+## API
 
-### optimizationLevel
+### imageminAdvpng(options)
 
-Type: `Number`  
+#### options.optimizationLevel
+
+Type: `number`  
 Default: `3`
 
 Select an optimization level between `0` and `4`.
