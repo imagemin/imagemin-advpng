@@ -37,6 +37,7 @@ module.exports = function (opts) {
 			.use(advpng, args.concat([execBuffer.src()]))
 			.run(file.contents, function (err, buf) {
 				if (err) {
+					err.fileName = file.path;
 					cb(err);
 					return;
 				}
