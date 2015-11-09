@@ -1,6 +1,6 @@
 'use strict';
 
-var advpng = require('advpng-bin').path;
+var advpng = require('advpng-bin');
 var ExecBuffer = require('exec-buffer');
 var isPng = require('is-png');
 var through = require('through2');
