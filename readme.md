@@ -6,55 +6,50 @@
 ## Install
 
 ```
-$ npm install --save imagemin-advpng
+$ npm install imagemin-advpng
 ```
 
 
 ## Usage
 
 ```js
-var Imagemin = require('imagemin');
-var imageminAdvpng = require('imagemin-advpng');
+const imagemin = require('imagemin');
+const imageminAdvpng = require('imagemin-advpng');
 
-new Imagemin()
-	.src('images/*.png')
-	.dest('build/images')
-	.use(imageminAdvpng({optimizationLevel: 4}))
-	.run();
-```
-
-You can also use this plugin with [gulp](http://gulpjs.com):
-
-```js
-var gulp = require('gulp');
-var imageminAdvpng = require('imagemin-advpng');
-
-gulp.task('default', function () {
-	return gulp.src('images/*.png')
-		.pipe(imageminAdvpng({optimizationLevel: 4})())
-		.pipe(gulp.dest('build/images'));
+imagemin(['images/*.png'], 'build/images', {use: [imageminAdvpng()]}).then(() => {
+	console.log('Images optimized');
 });
 ```
 
 
 ## API
 
-### imageminAdvpng(options)
+### imageminAdvpng([options])(buffer)
 
-#### options.optimizationLevel
+#### options
 
-Type: `number`  
+Type: `Object`
+
+##### optimizationLevel
+
+Type: `number`<br>
 Default: `3`
 
 Select an optimization level between `0` and `4`.
 
 Levels:
 
-`0` Don't compress  
-`1` Compress fast (zlib)  
-`2` Compress normal (7z)  
-`3` Compress extra (7z)  
+`0` Don't compress<br>
+`1` Compress fast (zlib)<br>
+`2` Compress normal (7z)<br>
+`3` Compress extra (7z)<br>
 `4` Compress extreme (zopfli)
+
+#### buffer
+
+Type: `Buffer`
+
+Buffer to optimize.
 
 
 ## License

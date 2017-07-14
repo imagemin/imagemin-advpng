@@ -1,55 +1,53 @@
 {
-  "name": "imagemin-advpng",
-  "version": "3.1.0",
-  "description": "AdvPNG imagemin plugin",
-  "license": "MIT",
-  "repository": "imagemin/imagemin-advpng",
-  "author": {
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "github.com/kevva"
-  },
-  "maintainers": [
-    {
-      "name": "Sindre Sorhus",
-      "email": "sindresorhus@gmail.com",
-      "url": "sindresorhus.com"
-    },
-    {
-      "name": "Shinnosuke Watanabe",
-      "url": "github.com/shinnn"
-    }
-  ],
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "advpng",
-    "compress",
-    "gulpplugin",
-    "image",
-    "imageminplugin",
-    "img",
-    "minify",
-    "optimize",
-    "png"
-  ],
-  "dependencies": {
-    "advpng-bin": "^3.0.0",
-    "exec-buffer": "^2.0.1",
-    "is-png": "^1.0.0",
-    "through2": "^2.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "vinyl": "^1.1.0",
-    "vinyl-file": "^1.1.0",
-    "xo": "*"
-  }
+	"name": "imagemin-advpng",
+	"version": "3.1.0",
+	"description": "AdvPNG imagemin plugin",
+	"license": "MIT",
+	"repository": "imagemin/imagemin-advpng",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "github.com/kevva"
+	},
+	"maintainers": [
+		{
+			"name": "Sindre Sorhus",
+			"email": "sindresorhus@gmail.com",
+			"url": "sindresorhus.com"
+		},
+		{
+			"name": "Shinnosuke Watanabe",
+			"url": "github.com/shinnn"
+		}
+	],
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"advpng",
+		"compress",
+		"gulpplugin",
+		"image",
+		"imageminplugin",
+		"img",
+		"minify",
+		"optimize",
+		"png"
+	],
+	"dependencies": {
+		"advpng-bin": "^3.0.0",
+		"exec-buffer": "^3.1.0",
+		"is-png": "^1.0.0",
+		"tempfile": "^2.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

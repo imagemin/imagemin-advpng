@@ -1,52 +1,37 @@
 'use strict';
+const execBuffer = require('exec-buffer');
+const advpng = require('advpng-bin');
+const isPng = require('is-png');
+const tempfile = require('tempfile');
 
-var advpng = require('advpng-bin');
-var ExecBuffer = require('exec-buffer');
-var isPng = require('is-png');
-var through = require('through2');
+module.exports = opts => buf => {
+	opts = Object.assign({optimizationLevel: 3}, opts);
 
-module.exports = function (opts) {
-	opts = opts || {};
+	if (!Buffer.isBuffer(buf)) {
+		return Promise.reject(new TypeError(`Expected a \`Buffer\`, got \`${typeof buf}\``));
+	}
 
-	return through.ctor({objectMode: true}, function (file, enc, cb) {
-		if (file.isNull()) {
-			cb(null, file);
-			return;
-		}
+	if (!isPng(buf)) {
+		return Promise.resolve(buf);
+	}
 
-		if (file.isStream()) {
-			cb(new Error('Streaming is not supported'));
-			return;
-		}
+	const args = ['--recompress', '-q'];
+	const tmp = tempfile();
 
-		if (!isPng(file.contents)) {
-			cb(null, file);
-			return;
-		}
+	if (typeof opts.optimizationLevel === 'number') {
+		args.push(`-${opts.optimizationLevel}`);
+	}
 
-		var execBuffer = new ExecBuffer();
-		var args = ['--recompress', '-q'];
-		var optimizationLevel = opts.optimizationLevel || 3;
+	args.push(execBuffer.input);
 
-		if (typeof optimizationLevel === 'number') {
-			args.push('-' + optimizationLevel);
-		}
-
-		execBuffer
-			.dest(execBuffer.src())
-			.use(advpng, args.concat([execBuffer.src()]))
-			.run(file.contents, function (err, buf) {
-				if (err) {
-					err.fileName = file.path;
-					cb(err);
-					return;
-				}
-
-				if (buf.length < file.contents.length) {
-					file.contents = buf;
-				}
-
-				cb(null, file);
-			});
+	return execBuffer({
+		input: buf,
+		bin: advpng,
+		args,
+		inputPath: tmp,
+		outputPath: tmp
+	}).catch(err => {
+		err.message = err.stderr || err.message;
+		throw err;
 	});
 };
