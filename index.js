@@ -30,8 +30,8 @@ module.exports = opts => buf => {
 		args,
 		inputPath: tmp,
 		outputPath: tmp
-	}).catch(err => {
-		err.message = err.stderr || err.message;
-		throw err;
+	}).catch(error => {
+		error.message = error.stderr || error.message;
+		throw error;
 	});
 };
