@@ -4,28 +4,34 @@ const advpng = require('advpng-bin');
 const isPng = require('is-png');
 const tempfile = require('tempfile');
 
-module.exports = opts => buf => {
-	opts = Object.assign({optimizationLevel: 3}, opts);
+module.exports = options => input => {
+	options = Object.assign({
+		optimizationLevel: 3
+	}, options);
 
-	if (!Buffer.isBuffer(buf)) {
-		return Promise.reject(new TypeError(`Expected a \`Buffer\`, got \`${typeof buf}\``));
+	if (!Buffer.isBuffer(input)) {
+		return Promise.reject(new TypeError(`Expected a \`Buffer\`, got \`${typeof input}\``));
 	}
 
-	if (!isPng(buf)) {
-		return Promise.resolve(buf);
+	if (!isPng(input)) {
+		return Promise.resolve(input);
 	}
 
-	const args = ['--recompress', '-q'];
+	const args = [
+		'--recompress',
+		'--quiet'
+	];
+
 	const tmp = tempfile();
 
-	if (typeof opts.optimizationLevel === 'number') {
-		args.push(`-${opts.optimizationLevel}`);
+	if (typeof options.optimizationLevel === 'number') {
+		args.push(`-${options.optimizationLevel}`);
 	}
 
 	args.push(execBuffer.input);
 
 	return execBuffer({
-		input: buf,
+		input,
 		bin: advpng,
 		args,
 		inputPath: tmp,

@@ -4,24 +4,8 @@
 	"description": "AdvPNG imagemin plugin",
 	"license": "MIT",
 	"repository": "imagemin/imagemin-advpng",
-	"author": {
-		"name": "Kevin Mårtensson",
-		"email": "kevinmartensson@gmail.com",
-		"url": "github.com/kevva"
-	},
-	"maintainers": [
-		{
-			"name": "Sindre Sorhus",
-			"email": "sindresorhus@gmail.com",
-			"url": "sindresorhus.com"
-		},
-		{
-			"name": "Shinnosuke Watanabe",
-			"url": "github.com/shinnn"
-		}
-	],
 	"engines": {
-		"node": ">=4"
+		"node": ">=6"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -42,12 +26,12 @@
 	],
 	"dependencies": {
 		"advpng-bin": "^3.0.0",
-		"exec-buffer": "^3.1.0",
-		"is-png": "^1.0.0",
+		"exec-buffer": "^3.2.0",
+		"is-png": "^1.1.0",
 		"tempfile": "^2.0.0"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
+		"ava": "^1.0.1",
+		"xo": "^0.23.0"
 	}
 }
