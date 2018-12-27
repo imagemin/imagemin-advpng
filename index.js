@@ -29,8 +29,7 @@ module.exports = options => input => {
 	}
 
 	if (typeof options.iterations === 'number') {
-		args.push('--iter');
-		args.push(options.iterations);
+		args.push('--iter', options.iterations);
 	}
 
 	args.push(execBuffer.input);
