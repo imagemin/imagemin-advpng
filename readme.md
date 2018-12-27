@@ -45,6 +45,13 @@ Levels:
 `3` Compress extra (7z)<br>
 `4` Compress extreme (zopfli)
 
+##### iterations
+
+Type: `number`<br>
+
+Optionally specify an additional number of iterations to perform for optimization levels 3 and 4.
+May provide marginally better compression, at the cost of additional time.
+
 #### buffer
 
 Type: `Buffer`

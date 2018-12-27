@@ -28,6 +28,10 @@ module.exports = options => input => {
 		args.push(`-${options.optimizationLevel}`);
 	}
 
+	if (typeof options.iterations === 'number') {
+		args.push('--iter', options.iterations);
+	}
+
 	args.push(execBuffer.input);
 
 	return execBuffer({
