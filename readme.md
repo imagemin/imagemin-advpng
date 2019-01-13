@@ -1,4 +1,4 @@
-# imagemin-advpng [![Build Status](http://img.shields.io/travis/imagemin/imagemin-advpng.svg?style=flat)](https://travis-ci.org/imagemin/imagemin-advpng) [![Build status](https://ci.appveyor.com/api/projects/status/8vw4a6jtvhao3jev?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/imagemin-advpng)
+# imagemin-advpng [![Build Status](http://img.shields.io/travis/imagemin/imagemin-advpng.svg?style=flat)](https://travis-ci.org/imagemin/imagemin-advpng)
 
 > advpng imagemin plugin
 
