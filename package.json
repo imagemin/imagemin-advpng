@@ -28,7 +28,7 @@
 		"advpng-bin": "^3.0.0",
 		"exec-buffer": "^3.2.0",
 		"is-png": "^1.1.0",
-		"tempfile": "^2.0.0"
+		"tmp": "^0.1.0"
 	},
 	"devDependencies": {
 		"ava": "^1.0.1",

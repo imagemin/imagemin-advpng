@@ -2,7 +2,7 @@
 const execBuffer = require('exec-buffer');
 const advpng = require('advpng-bin');
 const isPng = require('is-png');
-const tempfile = require('tempfile');
+const tempfile = require('tmp');
 
 module.exports = options => input => {
 	options = Object.assign({
@@ -22,7 +22,7 @@ module.exports = options => input => {
 		'--quiet'
 	];
 
-	const tmp = tempfile();
+	const tmp = tempfile.tmpNameSync();
 
 	if (typeof options.optimizationLevel === 'number') {
 		args.push(`-${options.optimizationLevel}`);
