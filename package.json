@@ -1,6 +1,6 @@
 {
 	"name": "imagemin-advpng",
-	"version": "5.0.0",
+	"version": "5.1.0",
 	"description": "AdvPNG imagemin plugin",
 	"license": "MIT",
 	"repository": "imagemin/imagemin-advpng",
