@@ -25,13 +25,13 @@
 		"png"
 	],
 	"dependencies": {
-		"advpng-bin": "^3.0.0",
+		"advpng-bin": "^4.0.0",
 		"exec-buffer": "^3.2.0",
-		"is-png": "^1.1.0",
-		"tempfile": "^2.0.0"
+		"is-png": "^2.0.0",
+		"tempfile": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^1.0.1",
-		"xo": "^0.23.0"
+		"ava": "^2.4.0",
+		"xo": "^0.25.3"
 	}
 }
