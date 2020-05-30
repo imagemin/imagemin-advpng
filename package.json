@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": "imagemin/imagemin-advpng",
 	"engines": {
-		"node": ">=6"
+		"node": ">=10"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -25,13 +25,13 @@
 		"png"
 	],
 	"dependencies": {
-		"advpng-bin": "^4.0.0",
+		"advpng-bin": "^5.0.0",
 		"exec-buffer": "^3.2.0",
 		"is-png": "^2.0.0",
 		"tempfile": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^2.4.0",
-		"xo": "^0.25.3"
+		"ava": "^3.8.0",
+		"xo": "^0.30.0"
 	}
 }
