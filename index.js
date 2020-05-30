@@ -5,9 +5,10 @@ const isPng = require('is-png');
 const tempfile = require('tempfile');
 
 module.exports = options => input => {
-	options = Object.assign({
-		optimizationLevel: 3
-	}, options);
+	options = {
+		optimizationLevel: 3,
+		...options
+	};
 
 	if (!Buffer.isBuffer(input)) {
 		return Promise.reject(new TypeError(`Expected a \`Buffer\`, got \`${typeof input}\``));
@@ -22,7 +23,7 @@ module.exports = options => input => {
 		'--quiet'
 	];
 
-	const tmp = tempfile();
+	const temporary = tempfile();
 
 	if (typeof options.optimizationLevel === 'number') {
 		args.push(`-${options.optimizationLevel}`);
@@ -38,8 +39,8 @@ module.exports = options => input => {
 		input,
 		bin: advpng,
 		args,
-		inputPath: tmp,
-		outputPath: tmp
+		inputPath: temporary,
+		outputPath: temporary
 	}).catch(error => {
 		error.message = error.stderr || error.message;
 		throw error;
