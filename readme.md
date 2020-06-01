@@ -16,9 +16,16 @@ $ npm install imagemin-advpng
 const imagemin = require('imagemin');
 const imageminAdvpng = require('imagemin-advpng');
 
-imagemin(['images/*.png'], 'build/images', {use: [imageminAdvpng()]}).then(() => {
+(async () => {
+	await imagemin(['images/*.png'], {
+		destination: 'build/images',
+		plugins: [
+			imageminAdvpng()
+		]
+	});
+
 	console.log('Images optimized');
-});
+})();
 ```
 
 
