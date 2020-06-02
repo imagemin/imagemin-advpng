@@ -25,11 +25,11 @@ module.exports = options => input => {
 
 	const temporary = tempfile();
 
-	if (typeof options.optimizationLevel === 'number') {
+	if (Number.isInteger(options.optimizationLevel)) {
 		args.push(`-${options.optimizationLevel}`);
 	}
 
-	if (typeof options.iterations === 'number') {
+	if (Number.isInteger(options.iterations)) {
 		args.push('--iter', options.iterations);
 	}
 
