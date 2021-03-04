@@ -1,4 +1,5 @@
-# imagemin-advpng [![Build Status](http://img.shields.io/travis/imagemin/imagemin-advpng.svg?style=flat)](https://travis-ci.org/imagemin/imagemin-advpng)
+# imagemin-advpng ![GitHub Actions Status](https://github.com/imagemin/imagemin-advpng/workflows/test/badge.svg?branch=master)
+
 
 > advpng imagemin plugin
 
